@@ -1,0 +1,778 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  background-color: black;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.card {
+  position: relative;
+  width: 190px;
+  height: 254px;
+  background-color: #000;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.profile-image1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("/assets/Img/3d-cartoon-portrait-person-practicing-law-profession.jpg");
+  background-size: cover;
+}
+.profile-image2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("/assets/Img/10084933.jpg");
+  background-size: cover;
+}
+.profile-image3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("/assets/Img/7125364.jpg");
+  background-size: cover;
+}
+.profile-image4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("/assets/Img/3d-cartoon-portrait-person-practicing-law-profession.jpg");
+  background-size: cover;
+}
+.profile-image5 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("/assets/Img/10084933.jpg");
+  background-size: cover;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;
+  height: 264px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, red 0%, yellow 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, red 0%, yellow 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.card p:not(.heading) {
+  font-size: 14px;
+}
+
+.card p:last-child {
+  color: #e81cff;
+  font-weight: 600;
+}
+
+.card:hover::after {
+  filter: blur(30px);
+}
+
+.card:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.description {
+  font-size: 14px;
+  color: #aaa;
+}
+.wallets {
+  color: white;
+  position: relative;
+  font-family: sans-serif;
+}
+.wallets::after {
+  content: "";
+  position: absolute;
+  height: 3rem;
+  top: 8%;
+  right: 5%;
+  border: 1px solid;
+}
+
+.wallets .box {
+  width: 400px;
+  height: 500px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+}
+
+.wallets .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wallets .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.wallets .box div strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.wallets .box div p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.wallets .box div span {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+.wallets .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: 0.2rem;
+}
+
+.wallets .box:hover {
+  box-shadow: 0px 0px 20px 1px #fbbf24;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+.cta {
+  display: flex;
+  padding: 11px 20px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  color: white;
+  background: #6225e6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  border: none;
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #fbc638;
+}
+
+.cta .second {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover .second {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.span {
+  transform: skewX(15deg);
+}
+
+.second {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover .three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover .one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover .two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: #fbc638;
+  }
+
+  100% {
+    fill: white;
+  }
+}
+.card3 {
+  cursor: pointer;
+  width: 300px;
+  height: 335px;
+  background: black;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Change to column to stack elements vertically */
+  align-items: center; /* Center align items horizontally */
+  justify-content: center; /* Center align items vertically */
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 10px; /* Optional: Add some padding for spacing */
+}
+
+.card3 img {
+  max-width: 90%; /* Ensure the image fits within the card */
+  height: auto;
+  z-index: 1;
+}
+
+.card3 h2 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+  margin: 10px 0 0 0; /* Optional: Add margin to create space between image and text */
+}
+
+.card3::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-color: #fbbf24; /* Amber-400 color */
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card3::after {
+  content: "";
+  position: absolute;
+  background: #353131;
+  inset: 5px;
+  border-radius: 15px;
+}
+.button2 {
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 0;
+  background-color: #fbbf24;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.button2:hover {
+  letter-spacing: 3px;
+  background-color: #fbbf24;
+  color: hsl(0, 0%, 100%);
+  box-shadow: #fbbf24 0px 7px 29px 0px;
+}
+
+.button2:active {
+  letter-spacing: 3px;
+  background-color: #fbbf24;
+  color: hsl(0, 0%, 100%);
+  box-shadow: #fbbf24 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+.button3 {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #1c2028;
+  cursor: pointer;
+  border: 0;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  color: white;
+}
+
+.button3:hover {
+  letter-spacing: 3px;
+  background-color: #fbbf24;
+  color: hsl(0, 0%, 100%);
+  box-shadow: #fbbf24 0px 7px 29px 0px;
+}
+
+.button3:active {
+  letter-spacing: 3px;
+  background-color: #fbbf24;
+  color: hsl(0, 0%, 100%);
+  box-shadow: #fbbf24 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+/*Card design*/
+.cards {
+  width: 500px;
+  height: 600px;
+  background: lightgray;
+  box-shadow: 0 4px 35px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.cards > .child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: clip-path 0.6s;
+  z-index: 1;
+}
+
+.cards .card-1 {
+  clip-path: polygon(0% 0%, 75% 0%, 0% 75%);
+  background-image: url("/assets/Img/steve.webp");
+}
+
+.cards .card-1:hover {
+  clip-path: polygon(0% 0%, 170% 0%, 0% 170%);
+}
+
+.cards .card-1:has(~ .card-2:hover),
+.cards .card-1:has(~ .card-3:hover) {
+  clip-path: polygon(0% 0%, 15% 0%, 0% 15%);
+}
+
+.cards .card-2 {
+  z-index: 0;
+  background-image: url("/assets/Img/nha.jpg");
+  color: white;
+}
+
+.cards .card-3 {
+  clip-path: polygon(25% 100%, 100% 25%, 100% 100%);
+  background-image: url("/assets/Img/MrBeast_2023_\(cropped\).webp");
+  color: white;
+}
+
+.cards .card-3:hover {
+  clip-path: polygon(-70% 100%, 100% -70%, 100% 100%);
+}
+
+.cards .card-1:hover ~ .card-3,
+.cards .card-2:hover ~ .card-3 {
+  clip-path: polygon(85% 100%, 100% 85%, 100% 100%);
+}
+
+/*Optional styles*/
+.cards {
+  font: 30px Arial, Helvetica, sans-serif;
+}
+
+.cards > .child {
+  /*If using background image on card children*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.6s;
+}
+
+.cards .card-1 {
+  background-color: #23a;
+  color: white;
+  padding-top: 30%;
+  padding-left: 20%;
+}
+
+.cards .card-1:hover {
+  padding-top: 65%;
+  padding-left: 48%;
+}
+
+.cards .card-2 {
+  padding-top: 65%;
+  padding-left: 48%;
+  background-color: #f16;
+}
+
+.cards .card-3 {
+  padding-top: 100%;
+  padding-left: 76%;
+  background-color: #dd2;
+}
+
+.cards .card-3:hover {
+  padding-top: 65%;
+  padding-left: 48%;
+}
+.loader {
+  position: relative;
+  width: 240px;
+  height: 130px;
+  margin-bottom: 10px;
+  border: 1px solid #d3d3d3;
+  padding: 15px;
+  background-color: #e3e3e3;
+  overflow: hidden;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(227, 227, 227, 0) 0%,
+    rgba(227, 227, 227, 0) 40%,
+    rgba(227, 227, 227, 0.5) 50%,
+    rgba(227, 227, 227, 0) 60%,
+    rgba(227, 227, 227, 0) 100%
+  );
+  animation: gradient-animation_2 1.2s linear infinite;
+}
+
+.loader .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.loader .wrapper > div {
+  background-color: #cacaca;
+}
+
+.loader .circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url("/assets/Img/nha.jpg");
+  background-size: cover;
+}
+
+.loader .button {
+  display: inline-block;
+  height: 32px;
+  width: 75px;
+}
+
+.loader .line-1 {
+  position: absolute;
+  top: 11px;
+  left: 58px;
+  height: 10px;
+  width: 100px;
+}
+
+.loader .line-2 {
+  position: absolute;
+  top: 34px;
+  left: 58px;
+  height: 10px;
+  width: 150px;
+}
+
+.loader .line-3 {
+  position: absolute;
+  top: 57px;
+  left: 0px;
+  height: 10px;
+  width: 100%;
+}
+
+.loader .line-4 {
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  height: 10px;
+  width: 92%;
+}
+
+@keyframes gradient-animation_2 {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+.cardss {
+  display: flex;
+  flex-wrap: wrap; /* Allow the cards to wrap to the next line */
+  justify-content: center; /* Center the cards within the container */
+  gap: 70px; /* Add gap between the cards */
+  width: 100%;
+  padding: 20px; /* Add some padding around the container */
+}
+
+.cardss .cardsss {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 500px; /* Increase height */
+  width: 350px; /* Increase width */
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 400ms, filter 400ms; /* Ensure smooth transition for both transform and filter */
+}
+
+.cardss .red {
+  background-color: white;
+}
+
+.cardss .blue {
+  background-color: #0062ff;
+}
+
+.cardss .green {
+  background-color: #18cd5e;
+}
+.cardss .purple {
+  background-color: #18cd5e;
+}
+.cardss .cardsss p.tip {
+  font-size: 18px; /* Increase font size */
+  font-weight: 500;
+}
+
+.cardss .cardsss p.second-text {
+  font-size: 1em; /* Increase font size */
+}
+
+.cardss .cardsss:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.cardss:hover > .cardsss:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: greenyellow;
+  box-shadow: 0 0 0 2px greenyellow;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: greenyellow;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #212121;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+.cardf {
+  width: 100%;
+  max-width: 300px;
+  min-width: 200px;
+  height: 250px;
+  background-color: #292929;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.iconf {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  max-width: 80px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease;
+  background-position: 0px;
+  background-size: 200px;
+}
+
+.iconf svg {
+  fill: white;
+}
+
+.cardf .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.cardf .text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.cardf:hover {
+  height: 270px;
+}
+
+.cardf:hover .text {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 40px;
+}
+
+.cardf:hover .icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+
+.cardf:hover .icon svg path {
+  fill: url("#gradientColor");
+  transition: all 0.3s ease;
+}
